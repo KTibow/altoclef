@@ -145,7 +145,6 @@ public class ItemTarget {
         } else if (isCatalogueItem()) {
             result.append(_catalogueName);
         } else {
-            result.append("[");
             int counter = 0;
             for (Item item : _itemMatches) {
                 if (item == null) {
@@ -157,10 +156,13 @@ public class ItemTarget {
                     result.append(",");
                 }
             }
-            result.append("]");
+            if (counter > 1) {
+                result.insert(0, "[");
+                result.append("]");
+            }
         }
-        if (!_infinite && !isEmpty()) {
-            result.append(" x ").append(_targetCount);
+        if (!_infinite && !isEmpty() && _targetCount != 1) {
+            result.append(" x").append(_targetCount);
         } else if (_infinite) {
             result.append(" x infinity");
         }
