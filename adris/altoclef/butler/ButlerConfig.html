@@ -103,8 +103,8 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>boolean</code></div>
 <div class="col-second even-row-color"><code><a href="#whisperFormatDebug" class="member-name-link">whisperFormatDebug</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">If set to true, will print information about whispers that are parsed and those that have
- failed parsing.</div>
+<div class="block">If set to true, will print information about whispers that are parsed and those
+ that have failed parsing.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
 <div class="col-second odd-row-color"><code><a href="#whisperFormats" class="member-name-link">whisperFormats</a></code></div>
@@ -176,30 +176,30 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="whisperFormats">
 <h3>whisperFormats</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">whisperFormats</span></div>
-<div class="block">Servers have different messaging plugins that change the way messages are displayed. Rather
- than attempt to implement all of them and introduce a big security risk, you may define
- custom whisper formats that the butler will watch out for.
-
- <p>Within curly brackets are three special parts:
-
- <p>{from}: Who the message was sent from {to}: Who the message was sent to, butler will
- ignore if this is not your username. {message}: The message.
-
+<div class="block">Servers have different messaging plugins that change the way messages are displayed.
+ Rather than attempt to implement all of them and introduce a big security risk,
+ you may define custom whisper formats that the butler will watch out for.
  <p>
-
- <p>WARNING: The butler will only accept non-chat messages as commands, but don't make this
- too lenient, else you may risk unauthorized control to the bot. Basically, make sure that
- only whispers can create the following messages.</div>
+ Within curly brackets are three special parts:
+ <p>
+ {from}: Who the message was sent from
+ {to}: Who the message was sent to, butler will ignore if this is not your username.
+ {message}: The message.
+ <p>
+ <p>
+ WARNING: The butler will only accept non-chat messages as commands, but don't make this too lenient,
+ else you may risk unauthorized control to the bot. Basically, make sure that only whispers can
+ create the following messages.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="whisperFormatDebug">
 <h3>whisperFormatDebug</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">whisperFormatDebug</span></div>
-<div class="block">If set to true, will print information about whispers that are parsed and those that have
- failed parsing.
+<div class="block">If set to true, will print information about whispers that are parsed and those
+ that have failed parsing.
 
- <p>Enable this if you need help setting up the whisper format.</div>
+ Enable this if you need help setting up the whisper format.</div>
 </section>
 </li>
 </ul>

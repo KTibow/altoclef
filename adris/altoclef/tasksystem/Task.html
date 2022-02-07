@@ -116,7 +116,11 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#interrupt(adris.altoclef.AltoClef,adris.altoclef.tasksystem.Task)" class="member-name-link">interrupt</a><wbr>(<a href="../AltoClef.html" title="class in adris.altoclef">AltoClef</a>&nbsp;mod,
  <a href="Task.html" title="class in adris.altoclef.tasksystem">Task</a>&nbsp;interruptTask)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Lets the task know it's execution has been "suspended"</div>
+<div class="block">Lets the task know it's execution has been "suspended"
+
+ STILL RUNS `onStop`
+
+ Doesn't stop it all-together (meaning `isActive` still returns true)</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isActive()" class="member-name-link">isActive</a>()</code></div>
@@ -236,9 +240,9 @@ loadScripts(document, 'script');</script>
  <a href="Task.html" title="class in adris.altoclef.tasksystem">Task</a>&nbsp;interruptTask)</span></div>
 <div class="block">Lets the task know it's execution has been "suspended"
 
- <p>STILL RUNS `onStop`
+ STILL RUNS `onStop`
 
- <p>Doesn't stop it all-together (meaning `isActive` still returns true)</div>
+ Doesn't stop it all-together (meaning `isActive` still returns true)</div>
 </section>
 </li>
 <li>

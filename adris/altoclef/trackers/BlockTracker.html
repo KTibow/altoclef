@@ -82,10 +82,10 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="Tracker.html" title="class in adris.altoclef.trackers">Tracker</a></span></div>
 <div class="block">Tracks blocks the way we want it, when we want it.
 
- <p>Gives you a "Check and don't care" interface where you can check for blocks and their
- locations over and over again without scanning the world over and over again.
+ Gives you a "Check and don't care" interface where you can check for blocks and their locations over and over again
+ without scanning the world over and over again.
 
- <p>Also keeps track of blacklists for unreachable blocks</div>
+ Also keeps track of blacklists for unreachable blocks</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -282,8 +282,9 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="trackBlock(net.minecraft.block.Block...)">
 <h3>trackBlock</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">trackBlock</span><wbr><span class="parameters">(net.minecraft.block.Block...&nbsp;blocks)</span></div>
-<div class="block">Starts tracking/pay attention to some blocks. <b>IMPORTANT:</b> ALWAYS pair with <a href="#stopTracking(net.minecraft.block.Block...)"><code>stopTracking</code></a>! Otherwise this block type will be tracked forever (not
- the end of the world, but other block types will be lost.</div>
+<div class="block">Starts tracking/pay attention to some blocks.
+ <b>IMPORTANT:</b> ALWAYS pair with <a href="#stopTracking(net.minecraft.block.Block...)"><code>stopTracking</code></a>! Otherwise this block type will be
+ tracked forever (not the end of the world, but other block types will be lost.</div>
 </section>
 </li>
 <li>
@@ -292,7 +293,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stopTracking</span><wbr><span class="parameters">(net.minecraft.block.Block...&nbsp;blocks)</span></div>
 <div class="block">Stops tracking some blocks, after calling <a href="#trackBlock(net.minecraft.block.Block...)"><code>trackBlock</code></a>.
 
- <p>Only call this once for every <a href="#trackBlock(net.minecraft.block.Block...)"><code>trackBlock</code></a>.</div>
+ Only call this once for every <a href="#trackBlock(net.minecraft.block.Block...)"><code>trackBlock</code></a>.</div>
 </section>
 </li>
 <li>
@@ -317,8 +318,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Checks whether any blocks of a type have been found.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>isValidTest</code> - A filter predicate, returns true if a block at a position should be
-     included.</dd>
+<dd><code>isValidTest</code> - A filter predicate, returns true if a block at a position should be included.</dd>
 <dd><code>blocks</code> - The blocks to check for</dd>
 </dl>
 </section>
@@ -418,8 +418,7 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>pos</code> - block that we were unable to reach</dd>
-<dd><code>allowedFailures</code> - how many times we can try reaching before we finally declare this
-     block "unreachable"</dd>
+<dd><code>allowedFailures</code> - how many times we can try reaching before we finally declare this block "unreachable"</dd>
 </dl>
 </section>
 </li>
