@@ -1,5 +1,6 @@
 package adris.altoclef.util;
 
+import adris.altoclef.Debug;
 import adris.altoclef.TaskCatalogue;
 import adris.altoclef.util.helpers.ItemHelper;
 import net.minecraft.item.Item;
@@ -27,12 +28,14 @@ public class ItemTarget {
         _itemMatches = items;
         _targetCount = targetCount;
         _infinite = false;
+        Debug.logMessage("ItemTarget: " + Arrays.toString(items) + " x " + targetCount);
     }
 
     public ItemTarget(String catalogueName, int targetCount) {
         _catalogueName = catalogueName;
         _itemMatches = TaskCatalogue.getItemMatches(catalogueName);
         _targetCount = targetCount;
+        Debug.logMessage("ItemTarget: " + catalogueName + " x " + targetCount);
     }
 
     public ItemTarget(String catalogueName) {

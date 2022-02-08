@@ -1,6 +1,7 @@
 package adris.altoclef.util.helpers;
 
 import adris.altoclef.AltoClef;
+import adris.altoclef.util.ItemTarget;
 import adris.altoclef.util.WoodType;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -417,6 +418,16 @@ public class ItemHelper {
 
     public static boolean isFuel(Item item) {
         return getFuelTimeMap().containsKey(item);
+    }
+
+    public static String itemTargetsToString(ItemTarget... targets) {
+        StringBuilder sb = new StringBuilder();
+        for (ItemTarget target : targets) {
+            if (sb.length() > 0)
+                sb.append(", ");
+            sb.append(target.toString());
+        }
+        return sb.toString();
     }
 
 }
