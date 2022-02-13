@@ -6,6 +6,7 @@ import adris.altoclef.commandsystem.*;
 import adris.altoclef.tasksystem.Task;
 import adris.altoclef.ui.MessagePriority;
 import adris.altoclef.util.ItemTarget;
+import adris.altoclef.util.ItemData;
 
 public class GetCommand extends Command {
 
@@ -27,7 +28,12 @@ public class GetCommand extends Command {
             return;
         }
         if (items.length == 1) {
-            targetTask = TaskCatalogue.getItemTask(items[0]);
+            if (ItemData.getTask(items[0])) {
+                targetTask = ItemData.getTask(items[0]);
+            } else {
+                mod.log("Using legacy TaskCatalogue for " + items[0].toString());
+                targetTask = TaskCatalogue.getItemTask(items[0]);
+            }
         } else {
             targetTask = TaskCatalogue.getSquashedItemTask(items);
         }
