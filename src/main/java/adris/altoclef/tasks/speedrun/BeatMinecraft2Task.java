@@ -69,7 +69,7 @@ public class BeatMinecraft2Task extends Task {
 
     private static final Item[] COLLECT_EYE_ARMOR = new Item[] {
             Items.DIAMOND_HELMET, Items.DIAMOND_CHESTPLATE, Items.DIAMOND_LEGGINGS,
-            Items.GOLDEN_BOOTS
+            Items.GOLDEN_BOOTS, Items.SHIELD
     };
     private static final Item[] COLLECT_EYE_ARMOR_END = ItemHelper.DIAMOND_ARMORS;
     private static final ItemTarget[] COLLECT_EYE_GEAR = combine(

@@ -1,8 +1,13 @@
 package adris.altoclef.tasks.movement;
 
 import adris.altoclef.AltoClef;
+import adris.altoclef.Debug;
 import adris.altoclef.tasksystem.Task;
 import adris.altoclef.util.baritone.GoalDodgeProjectiles;
+import adris.altoclef.util.helpers.StorageHelper;
+import adris.altoclef.util.slots.PlayerSlot;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import baritone.api.pathing.goals.Goal;
 
 public class DodgeProjectilesTask extends CustomBaritoneGoalTask {
@@ -45,6 +50,16 @@ public class DodgeProjectilesTask extends CustomBaritoneGoalTask {
 
     @Override
     protected Goal newGoal(AltoClef mod) {
+        ItemStack shieldSlot = StorageHelper.getItemStackInSlot(PlayerSlot.OFFHAND_SLOT);
+        if (shieldSlot.getItem() == Items.SHIELD) {
+            Debug.logMessage("Have shield in slot");
+        } else {
+            if (mod.getItemStorage().hasItemScreen(Items.SHIELD)) {
+                Debug.logMessage("Have shield");
+            } else {
+                Debug.logMessage("Do not have shield");
+            }
+        }
         return new GoalDodgeProjectiles(mod, _distanceHorizontal, _distanceVertical);
     }
 }
