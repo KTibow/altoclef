@@ -28,14 +28,26 @@ public class ItemTarget {
     private boolean _infinite = false;
 
     public ItemTarget(Item[] items, int targetCount) {
-        _itemMatches = items;
-        _targetCount = targetCount;
         // Remove duplicates
-        Set<Item> set = new HashSet<>();
-        for (Item item : _itemMatches) {
-            set.add(item);
+        // Get the string versions of all items
+        Set<String> itemStrings = new HashSet<String>();
+        for (Item item : items) {
+            itemStrings.add(item.toString());
         }
-        _itemMatches = set.toArray(new Item[0]);
+        // For each item, once it's seen add it to _itemMatches and remove it from itemStrings
+        // If the item isn't in itemStrings, don't add it, it's a dupe
+        _itemMatches = new Item[itemStrings.size()];
+        int i = 0;
+        for (String itemString : itemStrings) {
+            for (Item item : items) {
+                if (item.toString().equals(itemString)) {
+                    _itemMatches[i] = item;
+                    i++;
+                    break;
+                }
+            }
+        }
+        _targetCount = targetCount;
         if (items.length > 1) {
             Debug.logMessage("Friendly name for " + Arrays.toString(items) + " is not provided.");
             StringWriter sw = new StringWriter();
