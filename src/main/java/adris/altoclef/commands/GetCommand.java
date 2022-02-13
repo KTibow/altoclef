@@ -6,6 +6,8 @@ import adris.altoclef.commandsystem.*;
 import adris.altoclef.tasksystem.Task;
 import adris.altoclef.ui.MessagePriority;
 import adris.altoclef.util.ItemTarget;
+import adris.altoclef.util.ItemUtils;
+import net.minecraft.item.Items;
 
 public class GetCommand extends Command {
 
@@ -27,7 +29,11 @@ public class GetCommand extends Command {
             return;
         }
         if (items.length == 1) {
-            targetTask = TaskCatalogue.getItemTask(items[0]);
+            if (items[0].matches(Items.STONE)) {
+                targetTask = ItemUtils.getTask("stone");
+            } else {
+                targetTask = TaskCatalogue.getItemTask(items[0]);
+            }
         } else {
             targetTask = TaskCatalogue.getSquashedItemTask(items);
         }
