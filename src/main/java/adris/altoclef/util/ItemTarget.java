@@ -30,6 +30,12 @@ public class ItemTarget {
     public ItemTarget(Item[] items, int targetCount) {
         _itemMatches = items;
         _targetCount = targetCount;
+        // Remove duplicates
+        Set<Item> set = new HashSet<>();
+        for (Item item : _itemMatches) {
+            set.add(item);
+        }
+        _itemMatches = set.toArray(new Item[0]);
         if (items.length > 1) {
             Debug.logMessage("Friendly name for " + Arrays.toString(items) + " is not provided.");
             StringWriter sw = new StringWriter();
