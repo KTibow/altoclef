@@ -130,7 +130,12 @@ public class SmeltInFurnaceTask extends ResourceTask {
         public DoSmeltInFurnaceTask(SmeltTarget target) {
             super(Blocks.FURNACE, new ItemTarget(Items.FURNACE));
             _target = target;
-            _allMaterials = new ItemTarget(Stream.concat(Arrays.stream(_target.getMaterial().getMatches()), Arrays.stream(_target.getOptionalMaterials())).toArray(Item[]::new), _target.getMaterial().getTargetCount());
+            Debug.logMessage(_target.getMaterial().getMatches()[0].getTranslationKey());
+            Debug.logMessage(_target.getOptionalMaterials()[0].getTranslationKey());
+            _allMaterials = new ItemTarget(
+                Stream.concat(Arrays.stream(_target.getMaterial().getMatches()), Arrays.stream(_target.getOptionalMaterials())).toArray(Item[]::new),
+                _target.getMaterial().getTargetCount()
+            );
         }
 
         public void ignoreMaterials() {

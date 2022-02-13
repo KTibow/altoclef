@@ -9,6 +9,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import java.io.StringWriter;
+import java.io.PrintWriter;
+
 /**
  * Defines an item and a count.
  *
@@ -29,6 +32,11 @@ public class ItemTarget {
         _targetCount = targetCount;
         if (items.length > 1) {
             Debug.logMessage("Friendly name for " + Arrays.toString(items) + " is not provided.");
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            new Throwable().printStackTrace(pw);
+            String sStackTrace = sw.toString(); // stack trace as a string
+            Debug.logMessage(sStackTrace);
         }
     }
 
