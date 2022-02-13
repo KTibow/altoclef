@@ -28,7 +28,7 @@ public class ItemTarget {
         _itemMatches = items;
         _targetCount = targetCount;
         if (items.length > 1) {
-            Debug.logMessage("Friendly name for " + Arrays.toString(items) + " is not provided.");
+            Debug.logWarning("Friendly name for " + Arrays.toString(items) + " is not provided.");
         }
     }
 
